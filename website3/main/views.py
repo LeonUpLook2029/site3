@@ -6,3 +6,6 @@ def index(requst):
 
 def about(requst):
     return render(requst, 'main/about.html')
+
+def price(requst):
+    return render(requst, 'main/price.html')
