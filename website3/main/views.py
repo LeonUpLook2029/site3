@@ -4,6 +4,7 @@ from .models import Task
 # не требуется т.к. все обьекты в словарь
 # from .models import User
 # from .models import Date
+from .forms import TaskForm
 
 def index(requst):
     task = Task.objects.all()
@@ -13,6 +14,16 @@ def index(requst):
 # {, 'users': user, 'dates': date} не требуется т.к. все обьекты в словарь 'tasks'
 def about(requst):
     return render(requst, 'main/about.html')
+
+def create(requst):
+    form = TaskForm()
+    context = {
+        'form': form
+    }
+    return render(requst, 'main/create.html')
+
+def out(requst):
+    return render(requst, 'main/out.html')
 
 def price(requst):
     return render(requst, 'main/price.html')
