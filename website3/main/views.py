@@ -20,7 +20,7 @@ def create(requst):
     context = {
         'form': form
     }
-    return render(requst, 'main/create.html')
+    return render(requst, 'main/create.html', context)
 
 def out(requst):
     return render(requst, 'main/out.html')
