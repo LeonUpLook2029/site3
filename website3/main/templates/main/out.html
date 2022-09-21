@@ -1,0 +1,17 @@
+<!--наследование-->
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Найти задачу
+{% endblock %}
+
+{% block content %}
+    <h1>Найти задачу</h1>
+    <from method="post">
+        <input type="text" placeholder="Ввести название задачи для поиска" class="form-control"> <br>
+        <textarea type="text" placeholder="Введите описание задачи для поиска" class="form-control"></textarea><br>
+        <input type="text" placeholder="Ввести автора задачи для поиска" class="form-control"><br>
+        <input type="date" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Поиск</button>
+    </from>
+{% endblock %}
