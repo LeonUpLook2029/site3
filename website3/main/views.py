@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Task
 # не требуется т.к. все обьекты в словарь
@@ -16,14 +16,19 @@ def about(requst):
     return render(requst, 'main/about.html')
 
 def create(requst):
+    error = ""
     if requst.method == 'POST':
         form = TaskForm(requst.POST)
         if form.is_valid():
             form.save()
+            return redirect("home")
+        else:
+            error = 'Ввод данных был не верный'
 
     form = TaskForm()
     context = {
-        'form': form
+        'form': form,
+        'error': error
     }
     return render(requst, 'main/create.html', context)
 

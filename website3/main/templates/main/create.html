@@ -7,7 +7,7 @@
 
 {% block content %}
     <h1>Создать новую задачу</h1>
-    <from method="post">
+    <form method="post">
         {% csrf_token %}
         {{form.title}}<br>
         {{form.task}}<br>
@@ -18,5 +18,6 @@
 <!--        <input type="text" placeholder="Ввести автора" class="form-control"><br>-->
 <!--        <input type="date" class="form-control"><br>-->
         <button type="submit" class="btn btn-success">Добавить</button>
-    </from>
+        <span>{{error}}</span>
+    </form>
 {% endblock %}

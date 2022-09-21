@@ -8,6 +8,8 @@ class TaskForm(ModelForm):
         widgets = {"title": TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите название'}),
             "task": Textarea(attrs={'class': 'form-control', 'placeholder': 'Введите описание'}),
             "user": TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите автора'}),
-            "date": DateInput(attrs={'class': 'form-control', 'placeholder': 'Введите дату'}),
+            "date": DateInput(attrs={
+                # 'class': 'form-control', 'placeholder': 'Введите дату'
+            }),
 
         }
